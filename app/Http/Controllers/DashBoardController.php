@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Dash;
+use App\User;
 
 
 class DashBoardController extends Controller
 {
 
 
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -30,7 +31,6 @@ class DashBoardController extends Controller
     public function index()
     {
         $data = Dash::first();
-       
         return view('backend.dash', compact('data'));
     }
 
@@ -59,7 +59,7 @@ class DashBoardController extends Controller
         $data->logo_text = $request->logo_text;
         $data->address = $request->address;
 
-        
+
 
         // if($request->file('logo_img')){
         //     $img_file = $request->file('logo_img');
@@ -68,21 +68,14 @@ class DashBoardController extends Controller
 
         // }
 
-        if($request->file('logo_img')){
+        if ($request->file('logo_img')) {
             $file1 = $request->file('logo_img');
             Storage::putFile('public/img/logo', $file1);
-            $data->logo_img =  "storage/img/logo/".$file1->hashName();
-         }
+            $data->logo_img =  "storage/img/logo/" . $file1->hashName();
+        }
 
         $data->save();
-        
+
         return redirect()->route('admin')->with('success', " Data Updated Successfully");
-
-    
-       
     }
-
 }
-
-
-

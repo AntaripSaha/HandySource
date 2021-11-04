@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -75,6 +76,10 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     Route::get('/description', 'DescriptionController@index')->name('admin.description');
     Route::put('/description', 'DescriptionController@update')->name('admin.description.update');
+
+    Route::get('/status', 'StatusController@index')->name('admin.status');
+    Route::post('/status', 'statusController@update')->name('admin.status.update');
+    Route::delete('/status/{id}', 'StatusController@destroy')->name('admin.status.destroy');
 });
 
 Auth::routes();
