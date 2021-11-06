@@ -85,7 +85,6 @@
         <!-- Card Body Start -->
         <div class="col-md-10 ">
             <div class="row ">
-
                 <div class="col-xl-4 col-lg-6">
                     <div class="card l-bg-green-dark">
                         <div class="card-statistic-3 p-4">
@@ -109,8 +108,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="col-xl-4 col-lg-6">
                     <div class="card l-bg-blue-dark">
                         <div class="card-statistic-3 p-4">
@@ -134,7 +131,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-xl-4 col-lg-6">
                     <div class="card l-bg-cherry">
                         <div class="card-statistic-3 p-4">
@@ -158,18 +154,17 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
+
+
         <!-- Card Body End -->
 
 
 
 
         <!-- All Users Section Start -->
-        <div class="col-lg-7 col-md-12">
+        <div class="col-lg-10 col-md-12">
             <h4 class="card-title fw-bold">
                 <span class="lstick d-inline-block align-middle"></span>All Users
             </h4>
