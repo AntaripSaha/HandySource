@@ -10,8 +10,9 @@ class StatusController extends Controller
     public function index()
     {
         $users = User::where('email', '!=',  'antarip15@gmail.com')->select('id', 'name', 'email', 'admin')->get();
-        return view('backend.status', compact('users'));
+        return view('backend.status.status', compact('users'));
     }
+
 
     public function update(Request $request)
     {
