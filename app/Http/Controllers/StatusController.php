@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Service;
+use App\Portfolio;
+use App\Testimonial;
 
 class StatusController extends Controller
 {
     public function index()
     {
+        $service = Service::All()->count();
+        $portfolio = Portfolio::All()->count();
+        $testimonial = Testimonial::All()->count();
         $users = User::where('email', '!=',  'antarip15@gmail.com')->select('id', 'name', 'email', 'admin')->get();
-        return view('backend.status.status', compact('users'));
+        return view('backend.status.status', compact('users', 'service', 'portfolio', 'testimonial'));
     }
 
 
